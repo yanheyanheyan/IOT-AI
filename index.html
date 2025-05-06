@@ -1,80 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Smart Crop Recommendation</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Feedback Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+        .card {
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .card p {
+            color: #666;
+        }
+        .card button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .card button:hover {
+            background-color: #45a049;
+        }
+        .chart {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .chart div {
+            width: 48%;
+            margin-top: 20px;
+        }
+    </style>
 </head>
-<body class="bg-green-50 font-sans">
-  <!-- Hero Section -->
-  <section class="h-screen bg-cover bg-center flex flex-col justify-center items-center text-white" style="background-image: url('https://images.unsplash.com/photo-1600153221754-05a01dfd1b2f');">
-    <h1 class="text-5xl font-bold drop-shadow-xl">What Should I Grow?</h1>
-    <p class="text-xl mt-4 drop-shadow">AI-powered Crop Planning for Small Farmers in Asia</p>
-    <a href="#simulate" class="mt-6 px-6 py-3 bg-green-600 hover:bg-green-700 rounded-xl text-white shadow-lg">Start Simulation</a>
-  </section>
+<body>
 
-  <!-- Problem Section -->
-  <section class="py-16 px-6 max-w-5xl mx-auto">
-    <h2 class="text-3xl font-bold text-green-800 mb-6">The Problem: Crop Homogenization</h2>
-    <p class="text-gray-700 text-lg mb-4">Asia's agriculture suffers from over-reliance on rice and wheat, limiting farmer incomes and biodiversity.</p>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b" class="rounded-xl shadow" />
-      <div class="bg-white rounded-xl p-6 shadow">
-        <h3 class="text-xl font-semibold text-green-700">Farmer's Voice:</h3>
-        <p class="mt-2 text-gray-600 italic">"I've planted rice for 10 years, never thought there could be better choices for my land."</p>
-      </div>
-    </div>
-  </section>
+<header>
+    <h1>Farm Management Dashboard</h1>
+</header>
 
-  <!-- Solution Section -->
-  <section class="bg-green-100 py-16 px-6">
-    <h2 class="text-3xl font-bold text-center text-green-800 mb-10">Our Solution: AI + IoT Matching</h2>
-    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-      <ul class="text-gray-800 space-y-4">
-        <li>🌱 IoT collects soil, water, and climate data</li>
-        <li>🧠 AI analyzes data to suggest optimal crops</li>
-        <li>📈 Farmers see estimated income per crop</li>
-        <li>🚜 Enables data-driven planting decisions</li>
-      </ul>
-      <img src="https://images.unsplash.com/photo-1635694451448-4706b6dd79bb" class="rounded-xl shadow" />
+<div class="container">
+    <div class="card">
+        <h3>Farm Overview</h3>
+        <p><strong>Soil Moisture:</strong> 58% </p>
+        <p><strong>Temperature:</strong> 22°C </p>
+        <p><strong>Weather:</strong> Sunny</p>
     </div>
-  </section>
 
-  <!-- Simulation Section -->
-  <section id="simulate" class="py-16 px-6 max-w-4xl mx-auto">
-    <h2 class="text-3xl font-bold text-green-800 mb-6">Try It Yourself: Crop Simulation</h2>
-    <div class="bg-white p-6 rounded-xl shadow-md">
-      <label class="block mb-2 text-sm font-medium">Soil Type</label>
-      <select class="mb-4 w-full p-2 border rounded">
-        <option>Sandy</option>
-        <option>Loamy</option>
-        <option>Clay</option>
-      </select>
-      <label class="block mb-2 text-sm font-medium">Water Availability</label>
-      <select class="mb-4 w-full p-2 border rounded">
-        <option>High</option>
-        <option>Medium</option>
-        <option>Low</option>
-      </select>
-      <label class="block mb-2 text-sm font-medium">Temperature Range</label>
-      <select class="mb-4 w-full p-2 border rounded">
-        <option>Cool</option>
-        <option>Moderate</option>
-        <option>Hot</option>
-      </select>
-      <button class="mt-4 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Recommend Crop</button>
+    <div class="card">
+        <h3>Crop Recommendation</h3>
+        <p>Based on soil conditions and weather data, we recommend planting <strong>tomatoes</strong> in the upcoming season.</p>
+        <button>View Detailed Recommendation</button>
     </div>
-  </section>
 
-  <!-- Impact Section -->
-  <section class="bg-green-50 py-16 px-6">
-    <h2 class="text-3xl font-bold text-center text-green-800 mb-10">The Future: Diverse Fields, Stronger Farmers</h2>
-    <div class="max-w-4xl mx-auto text-center">
-      <p class="text-xl text-gray-700 mb-6">When every plot is optimized, farmer incomes grow and ecosystems thrive.</p>
-      <img src="https://images.unsplash.com/photo-1619983081634-05893f95d197" class="mx-auto rounded-xl shadow" />
-      <p class="mt-6 text-green-700 font-semibold">"Let every piece of land grow its most valuable future."</p>
+    <div class="card">
+        <h3>Suggested Actions</h3>
+        <p><strong>Watering:</strong> Recommended today due to low soil moisture.</p>
+        <p><strong>Fertilization:</strong> Fertilization needed for optimal crop growth.</p>
+        <button>Get Action Plan</button>
     </div>
-  </section>
+</div>
+
+<div class="chart">
+    <div>
+        <h3>Soil Moisture Over Time</h3>
+        <!-- This can be a graph or a chart showing soil moisture levels over time -->
+        <img src="https://via.placeholder.com/300x200.png?text=Graph+Placeholder" alt="Soil Moisture Chart">
+    </div>
+    <div>
+        <h3>Temperature Trends</h3>
+        <!-- This can be a graph showing temperature variations over time -->
+        <img src="https://via.placeholder.com/300x200.png?text=Graph+Placeholder" alt="Temperature Trend Chart">
+    </div>
+</div>
+
 </body>
 </html>
+
